@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagesmoke — Simple Website Monitoring</title>
+    <meta name="description" content="A tiny tool that checks if your website is up. Simple, fast, and reliable.">
+    <style>
+        :root {
+            --bg-color: #0a1128; /* Rich dark navy */
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #f97316; /* Smoke orange */
+            --primary-hover: #ea580c;
+            --card-bg: #111e3f; /* Darker navy card */
+            --border: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        header {
+            margin-bottom: 2.5rem;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-color);
+            text-decoration: none;
+            margin-bottom: 1rem;
+        }
+
+        .logo-dot {
+            width: 12px;
+            height: 12px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 10px var(--primary);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #f8fafc, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .benefits {
+            margin-top: 3.5rem;
+            display: grid;
+            gap: 1.5rem;
+            text-align: left;
+        }
+
+        .benefit-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1.25rem;
+            border-radius: 12px;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .benefit-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+            padding-top: 0.2rem;
+        }
+
+        .benefit-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: #f1f5f9;
+        }
+
+        .benefit-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            margin-top: 4rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="logo-dot"></span>
+                Pagesmoke
+            </div>
+            <h1>Is your website actually up?</h1>
+            <p class="subtitle">The absolute simplest way to monitor your site. No complex dashboards, no bloated alerts. Just a quick smoke test to make sure you're live.</p>
+            <a href="#signup" class="cta-btn" onclick="alert('Thanks for testing! This is a fictional product demo.')">Start monitoring</a>
+        </header>
+
+        <main>
+            <div class="benefits">
+                <div class="benefit-card">
+                    <span class="benefit-icon">⏱️</span>
+                    <div>
+                        <div class="benefit-title">Zero-config setup</div>
+                        <div class="benefit-desc">Just drop your URL and we'll start pinging. No tracking codes, no agents to install. Up in 5 seconds.</div>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="benefit-icon">🔥</span>
+                    <div>
+                        <div class="benefit-title">Instant smoke alerts</div>
+                        <div class="benefit-desc">If your site goes down, we send a simple alert immediately before your customers notice.</div>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="benefit-icon">📊</span>
+                    <div>
+                        <div class="benefit-title">Ultra lightweight</div>
+                        <div class="benefit-desc">We run tiny, non-intrusive checks that won't skew your analytics or slow down your server.</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Pagesmoke. A fictional smoke test by Injecting.</p>
+        </footer>
+    </div>
+</body>
+</html>
